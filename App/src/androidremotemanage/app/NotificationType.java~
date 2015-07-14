@@ -1,0 +1,6 @@
+package androidremotemange.app;
+
+public enum NotificationType{
+    Call,SMS;
+}
+    
