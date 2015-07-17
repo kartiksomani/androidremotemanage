@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'server.ui'
 #
-# Created: Fri Jul 17 23:16:27 2015
+# Created: Sat Jul 18 00:18:22 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,9 +26,9 @@ except AttributeError:
 class Ui_formServer(object):
     def setupUi(self, formServer):
         formServer.setObjectName(_fromUtf8("formServer"))
-        formServer.resize(399, 306)
+        formServer.resize(399, 523)
         self.gridLayoutWidget = QtGui.QWidget(formServer)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 10, 391, 291))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(0, 10, 391, 491))
         self.gridLayoutWidget.setObjectName(_fromUtf8("gridLayoutWidget"))
         self.gridLayout = QtGui.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setMargin(0)

@@ -1,6 +1,6 @@
 import sys
 import netifaces as ni
-import qrcode
+from qrcode import *
 from Server import Serve
 from PyQt4 import QtCore,QtGui
 from ui.serverForm import Ui_formServer
@@ -19,10 +19,32 @@ class ServerUI(QtGui.QWidget):
     def startServer(self):
         selectedIface = str(self.ui.listInterfaces.currentText())
         ipAddress = ni.ifaddresses(selectedIface)[AF_INET][0]['addr']
+        port = self.ui.txtPort.text()
         self.ui.lblStatus.setText(ipAddress)
+        qr = QRCode(version=20,error_correction=ERROR_CORRECT_L)
+        serverJson=self.getServerJson(ipAddress,port)
+        qr.add_data(serverJson)
+        qr.make()
+        im=qr.make_image()
+        im.save("qr.png")
+        scene = QtGui.QGraphicsScene()
+        view = self.ui.imgQrCode
+        view.setScene(scene)
+        pixmap = QtGui.QPixmap("qr.png")
+        gfxPixItem = scene.addPixmap(pixmap)
+        view.fitInView(gfxPixItem)
+        view.show()
+    def getServerJson(self,ipAddress,port):
+        json = "{"
+        json+="\"ipAddress\":\""
+        json+=ipAddress
+        json+="\","
+        json+="\"port\":"
+        json+=port
+        json+="}"
+        return json
 
-
-
+        
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
     serverUI = ServerUI()
