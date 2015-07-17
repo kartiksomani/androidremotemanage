@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'server.ui'
 #
-# Created: Thu Jul 16 18:58:19 2015
+# Created: Fri Jul 17 23:16:27 2015
 #      by: PyQt4 UI code generator 4.11.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -33,6 +33,9 @@ class Ui_formServer(object):
         self.gridLayout = QtGui.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setMargin(0)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.btnStart = QtGui.QPushButton(self.gridLayoutWidget)
+        self.btnStart.setObjectName(_fromUtf8("btnStart"))
+        self.gridLayout.addWidget(self.btnStart, 1, 0, 1, 1)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
         self.label = QtGui.QLabel(self.gridLayoutWidget)
@@ -41,19 +44,28 @@ class Ui_formServer(object):
         self.listInterfaces = QtGui.QComboBox(self.gridLayoutWidget)
         self.listInterfaces.setObjectName(_fromUtf8("listInterfaces"))
         self.horizontalLayout.addWidget(self.listInterfaces)
-        self.btnStart = QtGui.QPushButton(self.gridLayoutWidget)
-        self.btnStart.setObjectName(_fromUtf8("btnStart"))
-        self.horizontalLayout.addWidget(self.btnStart)
+        self.lblPort = QtGui.QLabel(self.gridLayoutWidget)
+        self.lblPort.setObjectName(_fromUtf8("lblPort"))
+        self.horizontalLayout.addWidget(self.lblPort)
+        self.txtPort = QtGui.QLineEdit(self.gridLayoutWidget)
+        self.txtPort.setObjectName(_fromUtf8("txtPort"))
+        self.horizontalLayout.addWidget(self.txtPort)
         self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 1)
-        self.qrCode = QtGui.QGraphicsView(self.gridLayoutWidget)
-        self.qrCode.setObjectName(_fromUtf8("qrCode"))
-        self.gridLayout.addWidget(self.qrCode, 1, 0, 1, 1)
+        self.imgQrCode = QtGui.QGraphicsView(self.gridLayoutWidget)
+        self.imgQrCode.setObjectName(_fromUtf8("imgQrCode"))
+        self.gridLayout.addWidget(self.imgQrCode, 9, 0, 1, 1)
+        self.lblStatus = QtGui.QLabel(self.gridLayoutWidget)
+        self.lblStatus.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblStatus.setObjectName(_fromUtf8("lblStatus"))
+        self.gridLayout.addWidget(self.lblStatus, 7, 0, 1, 1)
 
         self.retranslateUi(formServer)
         QtCore.QMetaObject.connectSlotsByName(formServer)
 
     def retranslateUi(self, formServer):
         formServer.setWindowTitle(_translate("formServer", "Android Remote Manage", None))
-        self.label.setText(_translate("formServer", "Interface:", None))
         self.btnStart.setText(_translate("formServer", "Start", None))
+        self.label.setText(_translate("formServer", "Interface:", None))
+        self.lblPort.setText(_translate("formServer", "Port:", None))
+        self.lblStatus.setText(_translate("formServer", "Idle", None))
 

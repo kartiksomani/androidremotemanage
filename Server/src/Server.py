@@ -9,11 +9,11 @@ class Serve(protocol.Protocol):
         conf = decoder.decode(data)
         create_notification_obj(conf)
         
-def create_notification_obj(data):
-    if data['type'] == 'Call' :
-        notification = CallNotification(data['source'],data['message'])
-    else:
-        print "Unknown Type"
+    def create_notification_obj(data):
+        if data['type'] == 'Call' :
+            notification = CallNotification(data['source'],data['message'])
+        else:
+            print "Unknown Type"
 
 def main():
     port = 1234

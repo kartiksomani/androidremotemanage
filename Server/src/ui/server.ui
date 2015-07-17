@@ -23,6 +23,13 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QPushButton" name="btnStart">
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -36,16 +43,29 @@
        <widget class="QComboBox" name="listInterfaces"/>
       </item>
       <item>
-       <widget class="QPushButton" name="btnStart">
+       <widget class="QLabel" name="lblPort">
         <property name="text">
-         <string>Start</string>
+         <string>Port:</string>
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QLineEdit" name="txtPort"/>
+      </item>
      </layout>
     </item>
-    <item row="1" column="0">
-     <widget class="QGraphicsView" name="qrCode"/>
+    <item row="9" column="0">
+     <widget class="QGraphicsView" name="imgQrCode"/>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="lblStatus">
+      <property name="text">
+       <string>Idle</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
