@@ -21,7 +21,7 @@ class ServerUI(QtGui.QWidget):
         ipAddress = ni.ifaddresses(selectedIface)[AF_INET][0]['addr']
         port = self.ui.txtPort.text()
         self.ui.lblStatus.setText(ipAddress)
-        qr = QRCode(version=20,error_correction=ERROR_CORRECT_L)
+        qr = QRCode(version=10,error_correction=ERROR_CORRECT_L,box_size=10)
         serverJson=self.getServerJson(ipAddress,port)
         qr.add_data(serverJson)
         qr.make()
